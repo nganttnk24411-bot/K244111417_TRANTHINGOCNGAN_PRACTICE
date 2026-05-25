@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: #5daed6; 
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        #boxdangki {
+            width: 650px;
+            margin: 20px auto;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        h2 {
+            margin: 5px 0;
+            font-size: 24px;
+        }
+
+        h2 + div {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #787676;
+            margin: 15px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 6px 4px;
+            vertical-align: middle;
+            font-size: 15px;
+            text-align: left;
+        }
+
+        input[type="text"], input[type="date"], select, textarea {
+            width: 100%;
+            padding: 4px;
+            border: 1px solid #c0b3b3;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 14px;
+        }
+
+        textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        form > div {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        form > div input[type="submit"], 
+        form > div input[type="reset"] {
+            padding: 5px 20px;
+            margin: 0 8px;
+            background-color: #f0f0f0;
+            border: 1px solid #848383;
+            border-radius: 2px;
+            cursor: pointer;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="boxdangki">
+        <div>
+            <img src="images/Jackson.gif" alt="Jackson Electronics Logo">
+        </div>
+
+        <h2>Registration Form</h2>
+        <div>Register your Jackson Electronics product here</div>
+
+        <form name="registration_form" action="process_registration.html" method="get">
+            
+            <table>
+                <tr>
+                    <td style="width: 20%;">
+                        <label for="firstname">First Name:</label>
+                    </td>
+                    <td style="width: 35%;">
+                        <input type="text" id="firstname" name="firstname">
+                    </td>
+                    <td style="width: 15%; text-align: right; padding-right: 10px;">
+                        <label for="lastname">Last Name:</label>
+                    </td>
+                    <td style="width: 30%;">
+                        <input type="text" id="lastname" name="lastname">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="address1">Address #1:</label>
+                    </td>
+                    <td colspan="3">
+                        <input type="text" id="address1" name="address1">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="address2">Address #2:</label>
+                    </td>
+                    <td colspan="3">
+                        <input type="text" id="address2" name="address2">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="city">City:</label>
+                    </td>
+                    <td colspan="3">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <tr>
+                                <td style="padding: 0; width: 45%;">
+                                    <input type="text" id="city" name="city">
+                                </td>
+                                <td style="padding: 0 5px; width: 12%; text-align: right;">
+                                    <label for="state">State:</label>
+                                </td>
+                                <td style="padding: 0; width: 15%;">
+                                    <input type="text" id="state" name="state">
+                                </td>
+                                <td style="padding: 0 5px; width: 10%; text-align: right;">
+                                    <label for="zip">Zip:</label>
+                                </td>
+                                <td style="padding: 0; width: 18%;">
+                                    <input type="text" id="zip" name="zip">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="country">Country:</label>
+                    </td>
+                    <td colspan="3">
+                        <input type="text" id="country" name="country" value="United States" style="width: 45%;">
+                    </td>
+                </tr>
+            </table>
+
+            <hr>
+
+            <table>
+                <tr>
+                    <td style="width: 20%;">
+                        <label for="product">Product:</label>
+                    </td>
+                    <td colspan="3">
+                        <select id="product" name="product" style="width: 45%;">
+                            <option value="scanmaster">ScanMaster</option>
+                            <option value="laserprint">LaserPrint</option>
+                            <option value="digicam">DigiCam</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="date_purchased">Date Purchased:</label>
+                    </td>
+                    <td colspan="3">
+                        <input type="date" id="date_purchased" name="date_purchased" style="width: 45%;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="serial_num">Serial #:</label>
+                    </td>
+                    <td colspan="3">
+                        <input type="text" id="serial_num" name="serial_num" style="width: 45%;">
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td style="vertical-align: top; padding-top: 6px;">Used for:</td>
+                    <td colspan="3">
+                        <table style="width: 100%;">
+                            <tr>
+                                <td style="width: 35%; padding: 2px 0;">
+                                    <input type="radio" id="home" name="used_for" value="home">
+                                    <label for="home">Home</label>
+                                </td>
+                                <td style="width: 65%; padding: 2px 0;">
+                                    <input type="radio" id="edu" name="used_for" value="education">
+                                    <label for="edu">Educational Institution</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 2px 0;">
+                                    <input type="radio" id="business" name="used_for" value="business" checked>
+                                    <label for="business">Business</label>
+                                </td>
+                                <td style="padding: 2px 0;">
+                                    <input type="radio" id="other_use" name="used_for" value="other">
+                                    <label for="other_use">Other</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="padding: 2px 0;">
+                                    <input type="radio" id="gov" name="used_for" value="government">
+                                    <label for="gov">Government</label>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="vertical-align: top; padding-top: 6px;">System (check all that apply):</td>
+                    <td colspan="3">
+                        <table style="width: 100%;">
+                            <tr>
+                                <td style="width: 35%; padding: 2px 0;">
+                                    <input type="checkbox" id="win" name="system" value="windows">
+                                    <label for="win">Windows</label>
+                                </td>
+                                <td style="width: 65%; padding: 2px 0;">
+                                    <input type="checkbox" id="unix" name="system" value="unix">
+                                    <label for="unix">UNIX</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 2px 0;">
+                                    <input type="checkbox" id="mac" name="system" value="macintosh">
+                                    <label for="mac">Macintosh</label>
+                                </td>
+                                <td style="padding: 2px 0;">
+                                    <input type="checkbox" id="other_sys" name="system" value="other">
+                                    <label for="other_sys">Other</label>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <hr>
+
+            <table>
+                <tr>
+                    <td style="width: 20%; vertical-align: top; padding-top: 6px;">
+                        <label for="comments">Comments?:</label>
+                    </td>
+                    <td style="width: 80%;">
+                        <textarea id="comments" name="comments"></textarea>
+                    </td>
+                </tr>
+            </table>
+
+            <div>
+                <input type="submit" value="Click to register">
+                <input type="reset" value="Click to cancel">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
