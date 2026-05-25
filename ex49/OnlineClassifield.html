@@ -1,0 +1,180 @@
+<html>
+<head>
+    <title>Online Classifieds Search Form</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            width: 600px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: #d0fefe;
+            border: 2px solid #1212fa;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #ff3300;
+            font-size: 26px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #5fa718;
+            margin: 0 0 20px 0;
+        }
+
+        p {
+            font-weight: bold;
+            font-size: 16px;
+            margin: 15px 0 10px 0;
+            text-align: left;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+
+        td {
+            padding: 4px;
+            vertical-align: middle;
+            font-size: 15px;
+            text-align: left;
+        }
+
+        input[type="text"], input[type="date"] {
+            padding: 3px;
+            border: 1px solid #787676;
+            background-color: #fcf9f9;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-right: 30px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <form name="search_form" action="search_simulation.html" method="get">
+        <h1>Online Classifieds Search Form</h1>
+        <hr>
+
+        <p> 1) Search for a classified in the following sections:</p>
+        <table>
+            <tr>
+                <td style="width: 35%;">
+                    <input type="radio" id="employment" name="section" value="employment">
+                    <label for="employment">Employment</label>
+                </td>
+                <td style="width: 65%;">
+                    <input type="radio" id="personal" name="section" value="personal">
+                    <label for="personal">Personal</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" id="forsale" name="section" value="forsale">
+                    <label for="forsale">For Sale</label>
+                </td>
+                <td>
+                    <input type="radio" id="miscellaneous" name="section" value="miscellaneous">
+                    <label for="miscellaneous">Miscellaneous</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" id="housing" name="section" value="housing">
+                    <label for="housing">Housing</label>
+                </td>
+                <td>
+                    <input type="radio" id="allsections" name="section" value="all">
+                    <label for="allsections">All of the above</label>
+                </td>
+            </tr>
+        </table>
+
+        <p> 2) Search the following publications:</p>
+        <table>
+            <tr>
+                <td style="width: 38%;">
+                    <input type="checkbox" id="midwest" name="publication" value="midwest">
+                    <label for="midwest">Midwest times</label>
+                </td>
+                <td style="width: 28%;">
+                    <input type="checkbox" id="modern" name="publication" value="modern">
+                    <label for="modern">Modern News</label>
+                </td>
+                <td style="width: 34%;">
+                    <input type="checkbox" id="employtoday" name="publication" value="employtoday">
+                    <label for="employtoday">Employment Today</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="greatlakes" name="publication" value="greatlakes">
+                    <label for="greatlakes">Great Lakes Classifieds</label>
+                </td>
+                <td>
+                    <input type="checkbox" id="middleton" name="publication" value="middleton">
+                    <label for="middleton">Middleton Daily</label>
+                </td>
+                <td>
+                    <input type="checkbox" id="cashtown" name="publication" value="cashtown">
+                    <label for="cashtown">Cashtown Daily News</label>
+                </td>
+            </tr>
+        </table>
+
+
+
+        <p>3) From 
+            <input type="date" name="from_date" style="width: 150px;"> 
+            to 
+            <input type="date" name="to_date" style="width: 150px;">.
+        </p>
+
+        <p>4) Enter a few keywords to describe the classified.</p>
+        <table>
+            <tr>
+                <td>
+                    <input type="text" name="keywords" style="width: 100%;">
+                </td>
+            </tr>
+        </table>
+
+        <p>5) Click one of the options below:</p>
+        <div style="margin-top: 25px; text-align: left; padding-left: 20px;">
+            <button type="submit">
+                <img src="images/Search.gif" alt="Search">
+            </button>
+            <button type="button" onclick="window.open('help.html')">
+                <img src="images/Help.gif" alt="Help">
+            </button>
+            <button type="reset">
+                <img src="images/Cancel.gif" alt="Cancel">
+            </button>
+        </div>
+    </form>
+</body>
+</html>
