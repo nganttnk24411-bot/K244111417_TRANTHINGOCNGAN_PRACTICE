@@ -1,0 +1,85 @@
+<html>
+<head>
+    <title>Tiêu đề trang </title>
+    <style>
+        p {color: white}
+    </style>
+</head>
+<body style="background-Color:rgb(81, 133, 126)">
+    <p align="center">
+        <img src="images/Logo.gif" alt="Image">
+    </p>
+
+    <h1 style="text-align:center; color: white">Newborn Registration</h1>
+
+
+    <form name="RegistrationForm">
+        <p> 
+            Date: 
+            <input type="date" name="Date" value="mm/dd/yy"/>
+        </p>
+
+        <p>
+            1) Infant's first name: 
+            <input type="text" name="FirstName"/>
+            
+            Last: 
+            <input type="text" name="LastName"/>
+        </p>
+
+        <p>
+            2) Medical Record #: 
+            <input type="text" name="Record"/>
+        </p>
+
+        <p>
+            3) Date of birth: 
+            <input type="date" name="ngaysinh" value="mm/dd/yy"/>
+        </p>
+
+        <p>
+            4) Birth weight: 
+            <input type="text" name="Weight"/>
+        </p>
+
+        <p>
+            5) APGAR score: 
+            <input type="text" name="apgarScore"/>
+        </p>
+
+        <p>
+            6) Mother's first name: 
+            <input type="text" name="motherFirstName"/>
+            
+            Last: 
+            <input type="text" name="motherLastName"/>
+        </p>
+
+        <p>
+            7) Father's first name: 
+            <input type="text" name="fatherFirstName"/>
+            
+            Last: 
+            <input type="text" name="fatherLastName"/>
+        </p>
+
+        <p>
+            8) Physician (check all that apply):
+            <select size="4" name="physicians" multiple>
+                <option value="dr_warren">Dr: Warren Albert</option>
+                <option value="dr_maria">Dr: Maria Alvarez</option>
+                <option value="dr_karen">Dr: Karen Brinkman</option>
+                <option value="dr_micheal">Dr: Micheal Kerry</option>
+            </select>
+        </p>
+
+        <p align="center">
+            <input type="submit" value="Register"/>
+            <input type="reset" value="Cancel"/>
+        </p>
+
+
+    </form>
+
+</body>
+</html>
