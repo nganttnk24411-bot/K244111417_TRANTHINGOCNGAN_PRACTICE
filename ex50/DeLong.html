@@ -1,0 +1,147 @@
+<html>
+<head>
+    <title>Tiêu đề trang </title>
+</head>
+<body style="background-Color:rgb(182, 253, 255)">
+    <p align="center">
+        <img src="images/DeLong.jpg" alt="DeLong Image">
+    </p>
+
+    <h2>Travel Expense Report</h2>
+    <hr color="brown"/>
+
+    <form name="expenseReportForm">
+        
+        <p>
+            1) First Name: 
+            <input type="text" name="firstName"/>
+
+            Last Name: 
+            <input type="text" name="lastName"/>
+        </p>
+
+
+        <p>
+            2) Social Security Number: 
+            <input type="text" name="ssn"/>
+        </p>
+
+        <p>
+            3) Department: 
+            <select name="department">
+                <option value="Accounting">Accounting</option>
+                <option value="Marketing">Marketing</option>
+                <option value="IT">IT</option>
+                <option value="HR">HR</option>
+            </select>
+        </p>
+
+
+        <p>
+            4) Describe the purpose of your trip.
+        </p>
+
+        <input type="text" size="60"/>
+
+
+        <p>
+            5) Itemize your travel expenses
+        </p>
+        
+        <table border="1">
+            <tr>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Amount</th>
+            </tr>
+            <tr>
+                <td><input type="date" name="date1" value="mm/dd/yy"/></td>
+                <td><input type="text" name="desc1"/></td>
+                <td>
+                    <select name="category1">
+                        <option value="Meal"> Meal</option>
+                        <option value="Lodging">Lodging </option>
+                        <option value="Transport">Transport</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </td>
+
+                <td>
+                    <input type="text" name="amount1"/>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td><input type="date" name="date2" value="mm/dd/yy"/></td>
+                <td><input type="text" name="desc2"/></td>
+                <td>
+                    <select name="category2">
+                        <option value="Meal">Meal</option>
+                        <option value="Lodging">Lodging</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </td>
+
+                <td>
+                    <input type="text" name="amount2"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="date" name="date3" value="mm/dd/yy"/></td>
+                <td><input type="text" name="desc3"/></td>
+                <td>
+                    <select name="category3">
+                        <option value="Meal">Meal</option>
+                        <option value="Lodging">Lodging</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="text" name="amount3"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="date" name="date4"  value="mm/dd/yy"/>
+                </td>
+                <td><input type="text" name="desc4"/></td>
+                <td>
+                    <select name="category4">
+                        <option value="Meal">Meal</option>
+                        <option value="Lodging">Lodging</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="text" name="amount4"/>
+                </td>
+            </tr>
+        </table>
+
+        <p>
+            6) Have you submitted your receipts? 
+            <input type="radio" id="receiptYes" name="receipts" value="Yes"/>
+            <label for="receiptYes">Yes</label>
+            <input type="radio" id="receiptNo" name="receipts" value="No"/>
+            <label for="receiptNo"></label>
+        </p>
+
+        <p>
+            <input type="submit" value="Submit travel expenses"/>
+            <input type="reset" value="Reset"/>
+        </p>
+    </form>
+
+
+
+    <p>Questions? Contact Debbie Larson in Accounting (ext. 2150). </p>
+
+</body>
+</html>
