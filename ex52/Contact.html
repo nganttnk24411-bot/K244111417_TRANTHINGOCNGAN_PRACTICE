@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>Tiêu đề trang </title>
+</head>
+<body>
+    <form 
+    name="contactForm" 
+    method="get" 
+    action="result.html">
+        <h3><b>Contact the editorial office</b></h3>
+
+
+        <p>
+            Full name 
+            <br/>
+            <input type="text" name="fullname" style="width: 100%;"/>
+        </p>
+
+        <table border="0" width="100%">
+            <tr>
+                <td width="50%" valign="top">
+                    <p>
+                        Email 
+                        <br/>
+                        <input type="text" name="email" style="width: 90%;"/>
+                    </p>
+
+                    <p>
+                        Title <br/>
+                        <input type="text" name="title" style="width: 90%;"/>
+                    </p>
+                </td>
+
+                <td width="50%" valign="top">
+                    <p>
+                        Send to 
+                        <br/>
+                        <select name="sendto" style="width: 100%;">
+                            <option value="Editorial board" selected> Editorial board</option>
+                            <option value="News Department">News Department </option>
+                            <option value="Board of Perspectives">Board of Perspectives</option>
+                            <option value="World Board"> World Board</option>
+                            <option value="Business Department">Business Department</option>
+                        </select>
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+        <p>
+            Content 
+            <br/>
+            <textarea name="content" rows="10" style="width: 100%;">
+            </textarea>
+        </p>
+
+        <p>
+            <input type="submit" value="Send" style="background-color: #a32a4e; color: white; border: none"/>
+        </p>
+
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result Page</title>
+</head>
+<body>
+
+    <h2>Kết quả truyền dữ liệu</h2>
+    <hr/>
+    
+    <ul>
+        <li>
+            <b>Full name:</b> 
+            <span id="res_fullname"></span>
+        </li>
+        <li>
+            <b>Email:</b> 
+            <span id="res_email"></span>
+        </li>
+        <li>
+            <b>Title:</b> 
+            <span id="res_title"></span>
+        </li>
+        <li>
+            <b>Send to:</b> 
+            <span id="res_sendto"></span>
+        </li>
+        <li>
+            <b>Content:</b> 
+            <span id="res_content"></span>
+        </li>
+    </ul>
+
+    <p>
+        <a href="contact.html">Quay lại trang liên hệ</a>
+    </p>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+
+        document.getElementById('res_fullname').innerText = urlParams.get('fullname') || "";
+        document.getElementById('res_email').innerText = urlParams.get('email') || "";
+        document.getElementById('res_title').innerText = urlParams.get('title') || "";
+        document.getElementById('res_sendto').innerText = urlParams.get('sendto') || "";
+        document.getElementById('res_content').innerText = urlParams.get('content') || "";
+    </script>
+
+</body>
+</html>
