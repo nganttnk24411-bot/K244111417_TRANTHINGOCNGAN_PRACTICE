@@ -1,0 +1,91 @@
+<html>
+<head>
+    <title>GPA Calculation</title>
+    <script>
+        function tinhGPA() {
+            a = eval(myform.diemQT.value);
+            b = eval(myform.diemGK.value);
+            c = eval(myform.diemCK.value);
+            d = eval(myform.diemT.value);
+
+            course = myform.courseSelect.value;
+
+            if (course == "Course 2") {
+                gpa = a * 0.25 + b * 0.25 + c * 0.5;
+            } else if (course == "Course 3") {
+                gpa = a * 0.15 + b * 0.2 + c * 0.5 + d * 0.15;
+            } else {
+                gpa = a * 0.3 + b * 0.2 + c * 0.5;
+            }
+
+            if (gpa >= 5) {
+                result.innerHTML = "<font color='green'>" + gpa + "</font>";
+            } else {
+                result.innerHTML = "<font color='red'>" + gpa + "</font>";
+            }
+        }
+
+        function checkCourse() {
+            course = myform.courseSelect.value;
+            
+            if (course == "Course 2") {
+                rowT.style.display = "none";
+                labelQT.innerHTML = "QT (25%)";
+                labelGK.innerHTML = "GK (25%)";
+                myform.diemT.value = "";
+            } else if (course == "Course 3") {
+                rowT.style.display = "";
+                labelQT.innerHTML = "QT (15%)";
+                labelGK.innerHTML = "GK (20%)";
+            } else {
+                rowT.style.display = "none";
+                labelQT.innerHTML = "QT (30%)";
+                labelGK.innerHTML = "GK (20%)";
+                myform.diemT.value = "";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>GPA Calculation</h3>
+    <form name="myform">
+        <table>
+            <tr>
+                <td>Select Course</td>
+                <td>
+                    <select name="courseSelect" onchange="checkCourse()">
+                        <option value="Course 1">Course 1</option>
+                        <option value="Course 2">Course 2</option>
+                        <option value="Course 3">Course 3</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td id="labelQT">QT (30%)</td>
+                <td><input type="text" name="diemQT"></td>
+            </tr>
+            <tr>
+                <td id="labelGK">GK (20%)</td>
+                <td><input type="text" name="diemGK"></td>
+            </tr>
+            <tr>
+                <td>CK (50%)</td>
+                <td><input type="text" name="diemCK"></td>
+            </tr>
+            <tr id="rowT" style="display: none;">
+                <td>T (15%)</td>
+                <td><input type="text" name="diemT"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" value="GPA" onclick="tinhGPA()">
+                </td>
+            </tr>
+            <tr>
+                <td>GPA:</td>
+                <td id="result"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
