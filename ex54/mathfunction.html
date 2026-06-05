@@ -1,0 +1,120 @@
+<html>
+    <head>
+        <title>Tiêu đề trang</title>
+        <script>
+            function calculateMax() {
+                var a = myform.a.value;
+                var b = myform.b.value;
+                var c = myform.c.value;
+                
+                var max= a;
+                if (b> max) 
+                {
+                    max = b;
+                }
+                if (c> max) 
+                {
+                    max = c;
+                }
+                result.innerHTML = max;
+            }
+
+            function calculateMin() {
+                var a = myform.a.value;
+                var b = myform.b.value;
+                var c = myform.c.value;
+
+                var min= a;
+                if (b< min) 
+                {
+                    min = b;
+                }
+                if (c < min) 
+                {
+                    min = c;
+                }
+                result.innerHTML = min; 
+            }
+
+            function calculateSin() {
+                var a = myform.a.value;
+                result.innerHTML = Math.sin(a * Math.PI / 180);
+            }
+
+            function calculateCos() {
+                var a = myform.a.value;
+                result.innerHTML = Math.cos(a * Math.PI / 180);
+            }
+
+            function calculatePow() {
+                var a = myform.a.value;
+                var b = myform.b.value;
+                
+                var luythua = 1;
+                for (var i=1; i<=b; i++)
+                {
+                    luythua = luythua * a;
+                }
+                result.innerHTML = luythua;
+            }
+        </script>
+
+    </head>
+
+    <body>
+        <form name="myform">
+            <table border="1">
+                <tr> 
+                    <td> a: </td>
+                    <td> 
+                        <input type="number" name="a" value="30">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> b: </td>
+                    <td> 
+                        <input type="number" name="b" value="45">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> c: </td>
+                    <td> 
+                        <input type="number" name="c" value="90">
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td> Result:</td>
+                    <td id="result"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2"> 
+                        <button type="button" onclick="calculateMax()">
+                            MAX
+                        </button>
+
+                        <button type="button" onclick="calculateMin()">
+                            MIN
+                        </button>
+
+                        <button type="button" onclick="calculateSin()">
+                            sin(a)
+                        </button>
+
+                        <button type="button" onclick="calculateCos()">
+                            cos(a)
+                        </button>
+
+                        <button type="button" onclick="calculatePow()">
+                            a^b
+                        </button>
+                    </td>
+                </tr>
+            </table>
+
+        </form>
+    </body>
+</html>
