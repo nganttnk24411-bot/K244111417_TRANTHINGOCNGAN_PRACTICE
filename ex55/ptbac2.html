@@ -1,0 +1,113 @@
+<html>
+<head>
+    <title>Exercise 55</title>
+    <script>
+        function findSolution() 
+        {
+            var a = myform.a.value;
+            var b = myform.b.value;
+            var c = myform.c.value;
+
+            if (a==0) 
+            {
+                if (b == 0) 
+                {
+                    if (c == 0) 
+                    {
+                        result.innerHTML = "Phương trình vô số nghiệm";
+                    } 
+                    else 
+                    {
+                        result.innerHTML = "Phương trình vô nghiệm";
+                    }
+                } 
+                else 
+                {
+                    var x = -c / b;
+                    result.innerHTML = "x = " + x;
+                }
+            } 
+            else 
+            {
+                var delta = (b*b) - (4*a*c);
+                if (delta < 0) 
+                {
+                    result.innerHTML = "Phương trình vô nghiệm";
+                } 
+                else if (delta == 0) 
+                {
+                    var x = -b / (2 * a);
+                    result.innerHTML = "x1 = x2 = " + x;
+                } 
+                else 
+                {
+                    var x1 = (-b - Math.sqrt(delta)) / (2 * a);
+                    var x2 = (-b + Math.sqrt(delta)) / (2 * a);
+                    result.innerHTML = "x1=" + x1 + " ; x2=" + x2;
+                }
+            }
+        }
+
+        function clearForm() 
+        {
+            myform.a.value = "";
+            myform.b.value = "";
+            myform.c.value = "";
+            result.innerHTML = "";
+        }
+    </script>
+</head>
+<body>
+
+    <form name="myform">
+        <table border="1">
+            <tr>
+                <td colspan="2" align="center" style="background-color: rgb(125, 207, 161)">
+                    The quadratic equation
+                </td>
+            </tr>
+            <tr>
+                <td>a:</td>
+                <td>
+                    <input type="number" name="a">
+                </td>
+            </tr>
+
+            <tr>
+                <td>b:</td>
+                <td>
+                    <input type="number" name="b">
+                </td>
+            </tr>
+
+            <tr>
+                <td>c:</td>
+                <td>
+                    <input type="number" name="c">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Result:</td>
+                <td id="result" style="color: red"></td>
+            </tr>
+
+
+            <tr>
+                <td></td>
+                <td>
+                    <button type="button" onclick="findSolution()">
+                        Find solution
+                    </button>
+
+
+                    <button type="button" onclick="clearForm()">
+                        Clear
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>
