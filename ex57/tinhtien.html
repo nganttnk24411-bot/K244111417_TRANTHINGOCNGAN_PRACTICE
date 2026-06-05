@@ -1,0 +1,144 @@
+<html>
+    <head>
+        <title>Tiêu đề trang </title>
+        <script>
+            function tinhD1() {
+                var qty1 = myform.qty1.value;
+                if (qty1 < 0 || qty1 == "") {
+                    alert("Số lượng sản phẩm Mouse không hợp lệ! Vui lòng nhập số lớn hơn hoặc bằng 0.");
+                    myform.qty1.value = "";
+                    myform.item1.value = "";
+                    return;
+                }
+                var gia1 = gia1_span.innerText; 
+                myform.item1.value = (gia1 * qty1).toFixed(2);
+            }
+
+            function tinhD2() {
+                var qty2 = myform.qty2.value;
+                if (qty2 < 0 || qty2 == "") {
+                    alert("Số lượng sản phẩm Keyboard không hợp lệ! Vui lòng nhập số lớn hơn hoặc bằng 0.");
+                    myform.qty2.value = "";
+                    myform.item2.value = "";
+                    return;
+                }
+
+                var gia2 = gia2_span.innerText; 
+                myform.item2.value = (gia2 * qty2).toFixed(2);
+            }
+
+            function tinhD3() {
+                var qty3 = myform.qty3.value;
+                if (qty3 < 0 || qty3 == "") {
+                    alert("Số lượng sản phẩm USB không hợp lệ! Vui lòng nhập số lớn hơn hoặc bằng 0.");
+                    myform.qty3.value = "";
+                    myform.item3.value = "";
+                    return;
+                }
+
+                var gia3 = gia3_span.innerText; 
+                myform.item3.value = (gia3 * qty3).toFixed(2);
+            }
+
+            function tinhTong() {
+                var item1 = myform.item1.value;
+                var item2 = myform.item2.value;
+                var item3 = myform.item3.value;
+                if (item1 == "" || item2 == "" || item3 == "") {
+                    alert("Vui lòng nhập đầy đủ và hợp lệ số lượng của tất cả sản phẩm trước khi tính tổng!");
+                    return;
+                }
+
+
+                myform.total.value = item1*1 + item2*1 + item3*1;
+            }
+
+        </script>
+    </head>
+    <body>
+        <form name="myform">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Part Number</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th>Item table</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr align="center">
+                        <td>C112</td>
+                        <td>Mouse</td>
+                        <td>
+                            <span id="gia1_span">19.95</span>$
+                        </td>
+                        <td>
+                            <input type="number" name="qty1" onchange="tinhD1()">
+                        </td>
+                        <td>
+                            <input type="text" name="item1" readonly>
+                        </td>
+                    </tr>
+
+                    
+                    <tr align="center">
+                        <td>B124</td>
+                        <td>Keyboard US</td>
+                        <td>
+                            <span id="gia2_span">29.95</span>$
+                        </td>
+                        <td>
+                            <input type="number" name="qty2" onchange="tinhD2()">
+                        </td>
+                        <td>
+                            <input type="text" name="item2" readonly>
+                        </td>
+                    </tr>
+
+
+                    <tr align="center">
+                        <td>U125</td>
+                        <td>USB KingMax</td>
+                        <td>
+                            <span id="gia3_span">39.95</span>$
+                        </td>
+                        <td>
+                            <input type="number" name="qty3" onchange="tinhD3()">
+                        </td>
+                        <td>
+                            <input type="text" name="item3" readonly>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="5">
+                            <hr/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4" align="right">
+                            Total:
+                        </td>
+
+                        <td>
+                            <input type="text" name="total" readonly>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="5" align="right">
+                            <button type="button" onclick="tinhTong()" style="background-color: rgb(247, 232, 92); color: white">
+                                <b> Sum </b>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+
+    </body>
+</html>
