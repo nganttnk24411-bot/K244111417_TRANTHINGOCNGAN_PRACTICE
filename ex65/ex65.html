@@ -1,0 +1,91 @@
+<html>
+<head>
+    <title>Web Node</title>
+</head>
+<body>
+
+    <table border="0" cellpadding="5">
+        <tr>
+            <td><button onclick="addNode()">Add Node</button></td>
+            <td>Content</td>
+            <td><input type="text" id="txtContent"></td>
+            <td>Position</td>
+            <td><input type="text" id="txtAddPos"></td>
+        </tr>
+        <tr>
+            <td><button onclick="removeNode()">Remove Node</button></td>
+            <td></td>
+            <td></td>
+            <td>Position</td>
+            <td><input type="text" id="txtRemovePos"></td>
+        </tr>
+        <tr>
+            <td><button onclick="modifyNode()">Modify Node</button></td>
+            <td>New Content</td>
+            <td><input type="text" id="txtNewContent"></td>
+            <td>Position</td>
+            <td><input type="text" id="txtModifyPos"></td>
+        </tr>
+    </table>
+
+    <div id="webNodeContainer">
+        <h3>Web Node</h3>
+        <ul id="nodeList">
+            <li>Data base</li>
+            <li>Web1</li>
+            <li>Web2</li>
+        </ul>
+    </div>
+
+    <script>
+        function addNode() {
+            var content = document.getElementById("txtContent").value;
+            var pos = document.getElementById("txtAddPos").value;
+            var ul = document.getElementById("nodeList");
+            
+            var newLi = document.createElement("li");
+            newLi.innerText = content;
+
+            if (pos === "") {
+                ul.appendChild(newLi);
+            } else {
+                var index = parseInt(pos) - 1;
+                var listItems = ul.getElementsByTagName("li");
+                
+                if (index >= listItems.length) {
+                    ul.appendChild(newLi);
+                } else {
+                    ul.insertBefore(newLi, listItems[index]);
+                }
+            }
+        }
+
+        function removeNode() {
+            var pos = document.getElementById("txtRemovePos").value;
+            var ul = document.getElementById("nodeList");
+            var listItems = ul.getElementsByTagName("li");
+            
+            var index = parseInt(pos) - 1;
+            if (index >= 0 && index < listItems.length) {
+                ul.removeChild(listItems[index]);
+            }
+        }
+
+        function modifyNode() {
+            var newContent = document.getElementById("txtNewContent").value;
+            var pos = document.getElementById("txtModifyPos").value;
+            var ul = document.getElementById("nodeList");
+            var listItems = ul.getElementsByTagName("li");
+            
+            var index = parseInt(pos) - 1;
+            if (index >= 0 && index < listItems.length) {
+                var replacementLi = document.createElement("li");
+                replacementLi.innerText = newContent;
+                
+                ul.replaceChild(replacementLi, listItems[index]);
+            }
+        }
+    </script>
+
+</body>
+</html>
