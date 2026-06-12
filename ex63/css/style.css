@@ -1,0 +1,16 @@
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th {
+    background-color: blue;
+    color: white;
+}
+#memberBody tr {
+    background-color: white;
+}
+.bg-blue { background-color: blue; color: white; }
+.bg-red { background-color: red; color: white; }
+.bg-yellow { background-color: yellow; }
+.bg-green { background-color: green; color: white; }
+.bg-violet { background-color: violet; }

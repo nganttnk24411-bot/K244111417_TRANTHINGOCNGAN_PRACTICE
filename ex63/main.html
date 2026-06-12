@@ -1,0 +1,63 @@
+<html>
+<head>
+    <title>Member Registration</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+
+    <h1>Member Registration</h1>
+    <hr>
+
+    <form name="myform">
+        Name(*): <input type="text" id="name"><br>
+
+        Birthday(*): 
+        Day: <select id="birthDay"></select>
+        Month: <select id="birthMonth"></select>
+        Year: <select id="birthYear"></select><br>
+
+        Gender(*): 
+        <input type="radio" name="gender" value="Man" id="genderMan" checked> Man
+        <input type="radio" name="gender" value="Woman" id="genderWoman"> Woman<br>
+
+        Email(*): <input type="email" id="email"><br>
+
+        Your favorite:<br>
+        <input type="checkbox" name="favorite" value="Shopping" id="fav1" checked> Shopping<br>
+        <input type="checkbox" name="favorite" value="Tourism" id="fav2" checked> Tourism<br>
+        <input type="checkbox" name="favorite" value="Chat" id="fav3" checked> Chat<br>
+        <input type="checkbox" name="favorite" value="Read a book" id="fav4" checked> Read a book<br>
+        <input type="checkbox" name="favorite" value="Listening to music" id="fav5" checked> Listening to music<br>
+
+        Your favorite color:<br>
+        <input type="radio" name="favColor" value="Blue" id="c1" checked> <span class="bg-blue">Blue</span><br>
+        <input type="radio" name="favColor" value="Red" id="c2"> <span class="bg-red">Red</span><br>
+        <input type="radio" name="favColor" value="Yellow" id="c3"> <span class="bg-yellow">Yellow</span><br>
+        <input type="radio" name="favColor" value="Green" id="c4"> <span class="bg-green">Green</span><br>
+        <input type="radio" name="favColor" value="Violet" id="c5"> <span class="bg-violet">Violet</span><br>
+
+        <button type="submit" id="btnRegister">Sign up</button>
+        <button type="button" id="btnNext">Next</button>
+    </form>
+
+    <table id="memberTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Birthday</th>
+                <th>Hobbies</th>
+                <th>Colors</th>
+            </tr>
+        </thead>
+        <tbody id="memberBody">
+            <tr><td>John</td><td>john@gmail.com</td><td>Man</td><td>02/02/1990</td><td>Reading</td><td>Yellow</td></tr>
+            <tr><td>Peter</td><td>peter@gmail.com</td><td>Man</td><td>01/01/1992</td><td>chat, reading</td><td>Red</td></tr>
+            <tr><td>Lucy</td><td>lucy@gmail.com</td><td>Woman</td><td>01/02/2005</td><td>Listening, Chat</td><td>Violet</td></tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
