@@ -1,0 +1,45 @@
+<html>
+
+    <head>
+        <title> Tieu de trang </title>
+        <style>
+            @import url(css/maincss.css);
+        </style>
+        <script src="js/mainjs.js"></script>
+    </head>
+
+
+    <body>
+        <table>
+            <tr>
+                <td style="width: 15%; font-weight: bold; border-bottom: none;">
+                    Title:
+                </td>
+
+                <td style="border-bottom: none;">
+                    <select id="titleSelect" onchange="loc_nhan_vien_theo_title(this.value)" style="width: 200px; padding: 3px;">
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Employee Name</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+
+            <tbody id="bodybox">
+            </tbody>
+        </table>
+
+        <script>
+            load_employees_data();
+        </script>
+
+    </body>
+</html>

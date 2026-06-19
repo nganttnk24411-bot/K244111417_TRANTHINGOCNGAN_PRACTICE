@@ -1,0 +1,17 @@
+table 
+{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td 
+{
+    text-align: left;
+    border: 1px solid black;
+
+}
+
+thead tr th {
+    background-color: #5b8c5a;
+    color: white;
+}
