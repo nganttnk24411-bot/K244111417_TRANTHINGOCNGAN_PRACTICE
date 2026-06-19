@@ -1,0 +1,33 @@
+table, tr, th, td 
+{
+    border: 1px solid black;
+}
+
+table 
+{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tbody tr:hover 
+{
+    background-color: yellow;
+}
+
+thead tr:first-child th 
+{
+    background-color: #f2c94c; 
+    text-align: center;
+}
+
+thead tr:last-child th 
+{
+    background-color: #5b8c5a; 
+    color: white;
+}
+
+#in4Detail thead th 
+{
+    background-color: #d9ead3; 
+    text-align: center;
+}

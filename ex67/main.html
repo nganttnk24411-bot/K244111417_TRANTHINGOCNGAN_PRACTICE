@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <title> Tieu de trang </title>
+        <style>
+            @import url(css/maincss.css);
+        </style>
+
+        <script src="datasets/students.js"></script>
+
+        <script src="js/mainjs.js"></script>
+    </head>
+
+
+    <body>
+        <div id="divdataset">
+        </div>
+
+        <table id="tableStudents" border="1">
+            <thead>
+                <tr>
+                    <th colspan="4" id="listTitle"> List of Students </th>
+                </tr>
+
+                <tr>
+                    <th onclick="sort_students('id', students, bodybox)">
+                        Student ID
+                    </th>
+
+                    <th onclick="sort_students('name', students, bodybox)">
+                        Student Name
+                    </th>
+
+                    <th onclick="sort_students('birthday', students, bodybox)">
+                        Birthday
+                    </th>
+
+                    <th onclick="sort_students('gender', students, bodybox)">
+                        Gender
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody id="bodybox">
+            </tbody>
+        </table>
+
+        <table id="in4Detail" style="display:none;">
+            <thead>
+                <tr>
+                    <th colspan="2">Student Information</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Student ID:</td>
+                    <td id="dt_id"></td>
+                </tr>
+
+                <tr>
+                    <td>Student Name:</td>
+                    <td id="dt_name"></td>
+                </tr>
+
+                <tr>
+                    <td>Birthday:</td>
+                    <td id="dt_birthday"></td>
+                </tr>
+
+                <tr>
+                    <td>Gender:</td>
+                    <td id="dt_gender"></td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <script>
+
+            bodybox = document.getElementById("bodybox");
+            load_students_from_xml(students, bodybox);
+        </script>
+    </body>
+</html>
