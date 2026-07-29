@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Trần Thị Ngọc Ngân - BA/DA Intern</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #1e293b;
+            line-height: 1.5;
+            padding: 40px 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* HỆ THỐNG KHUNG CONTAINER TỰ CO GIÃN THÔNG MINH (FLEXBOX CHUẨN ĐẸP) */
+        .cv-container {
+            width: 100%;
+            max-width: 960px;
+            background-color: #ffffff;
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+        }
+        
+        /* CỘT TRÁI (SIDEBAR) - Tone Xanh Navy Công Nghệ Đậm */
+        .cv-left-col {
+            width: 35%;
+            background-color: #0f172a;
+            color: #f8fafc;
+            padding: 35px 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        /* CỘT PHẢI (MAIN CONTENT) - Phối màu sáng thanh lịch */
+        .cv-right-col {
+            width: 65%;
+            padding: 35px 30px;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+        
+        /* Ảnh đại diện co giãn tự động */
+        .profile-img-container {
+            text-align: center;
+        }
+        .profile-img {
+            width: 100%;
+            max-width: 140px;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            border: 4px solid #38bdf8;
+            object-fit: cover;
+            background-color: #1e293b;
+        }
+        
+        .left-title {
+            font-size: 12.5pt;
+            font-weight: bold;
+            color: #38bdf8;
+            text-transform: uppercase;
+            border-bottom: 2px solid #1e293b;
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+            letter-spacing: 0.8px;
+        }
+        .contact-item {
+            font-size: 9.5pt;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            color: #cbd5e1;
+        }
+        .contact-item strong {
+            color: #ffffff;
+        }
+        .contact-item a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        /* KHỐI CÔNG CỤ XẾP GỌN THEO ĐÚNG IMAGE_238662.PNG (XÓA SẠCH ICON) */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .skill-badge {
+            background-color: #1e293b;
+            color: #38bdf8;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 9pt;
+            border: 1px solid #334155;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        
+        .trait-item {
+            font-size: 9.5pt;
+            margin-bottom: 8px;
+            padding-left: 10px;
+            border-left: 3px solid #38bdf8;
+            color: #cbd5e1;
+            text-align: justify;
+        }
+        
+        /* Cấu trúc hiển thị Cột Phải */
+        .header-section {
+            border-bottom: 3px solid #0284c7;
+            padding-bottom: 12px;
+        }
+        .candidate-name {
+            font-size: 24pt;
+            font-weight: 800;
+            color: #0f172a;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .candidate-title {
+            font-size: 13.5pt;
+            font-weight: 600;
+            color: #0284c7;
+            margin-top: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .motto-text {
+            font-style: italic;
+            font-size: 9.5pt;
+            color: #475569;
+            margin-top: 6px;
+        }
+        
+        .right-title {
+            font-size: 12pt;
+            font-weight: bold;
+            color: #0f172a;
+            text-transform: uppercase;
+            border-left: 5px solid #0284c7;
+            padding-left: 10px;
+            margin-bottom: 12px;
+            background-color: #f1f5f9;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 4px;
+        }
+        
+        .summary-text {
+            font-size: 10pt;
+            text-align: justify;
+            color: #334155;
+            line-height: 1.5;
+        }
+        
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .info-table td {
+            padding: 2px 0;
+            vertical-align: top;
+            font-size: 10pt;
+        }
+        
+        /* KHUNG ĐỒ ÁN MÀU XANH NHẠT SOLID THAY CHO TONE HỒNG CŨ */
+        .project-card {
+            background-color: #e0f2fe; /* Màu xanh Solid rõ nét mát mắt */
+            border: 1px solid #bae6fd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 12px;
+            display: block;
+        }
+        .project-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 4px;
+        }
+        .project-header {
+            font-size: 10.5pt;
+            font-weight: bold;
+            color: #0369a1;
+        }
+        .project-status {
+            font-size: 9pt;
+            background-color: #ffffff;
+            color: #0284c7;
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            border: 1px solid #bae6fd;
+            white-space: nowrap;
+        }
+        .project-role {
+            font-style: italic;
+            font-size: 9.5pt;
+            color: #475569;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        .project-score-line {
+            font-size: 9.5pt;
+            font-weight: bold;
+            color: #b91c1c;
+            margin-bottom: 4px;
+            display: block;
+        }
+        .project-bullets {
+            list-style-type: circle;
+            padding-left: 18px;
+            font-size: 9.5pt;
+            color: #1e293b;
+        }
+        .project-bullets li {
+            margin-bottom: 4px;
+            text-align: justify;
+        }
+        
+        /* BADGE NÚT BẤM ĐƯỜNG DẪN ĐỒ ÁN TONE XANH */
+        .btn-link-project {
+            display: inline-block;
+            background-color: #0284c7;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 8pt;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-top: 8px;
+            transition: background-color 0.2s;
+        }
+        .btn-link-project:hover {
+            background-color: #0369a1;
+        }
+
+        @media (max-width: 768px) {
+            .cv-container { flex-direction: column; }
+            .cv-left-col { width: 100%; border-radius: 12px 12px 0 0; }
+            .cv-right-col { width: 100%; border-radius: 0 0 12px 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        
+        <!-- CỘT TRÁI (SIDEBAR) -->
+        <div class="cv-left-col">
+            
+            <div class="profile-img-container">
+                <img src="images/tranngan.jpg" alt="Trần Thị Ngọc Ngân" class="profile-img">
+            </div>
+            
+            <!-- THÔNG TIN CÁ NHÂN -->
+            <div class="left-section">
+                <div class="left-title">Thông Tin Cá Nhân</div>
+                <div class="contact-item"><strong>Ngày sinh:</strong> 21/05/2006</div>
+                <div class="contact-item"><strong>Giới tính:</strong> Nữ</div>
+                <div class="contact-item"><strong>Zalo/SĐT:</strong> 0399824197</div>
+                <div class="contact-item"><strong>Email:</strong><br><a href="mailto:nganttnk24411@st.uel.edu.vn">nganttnk24411@st.uel.edu.vn</a></div>
+                <div class="contact-item"><strong>LinkedIn:</strong><br><a href="https://www.linkedin.com/in/ng%C3%A2n-tr%E1%BA%A7n-th%E1%BB%8B-ng%E1%BB%8Dc-430894394/" target="_blank">Trần Thị Ngọc Ngân</a></div>
+                <div class="contact-item"><strong>Địa chỉ:</strong> Thủ Đức, TP.HCM</div>
+            </div>
+            
+            <div class="left-section">
+                <div class="left-title">Công Cụ & Công Nghệ</div>
+                <div class="skills-container">
+                    <span class="skill-badge">Python</span>
+                    <span class="skill-badge">SQL (MySQL)</span>
+                    <span class="skill-badge">OpenAI Codex</span>
+                    <span class="skill-badge">n8n Automation</span>
+                    <span class="skill-badge">VS Code</span>
+                    <span class="skill-badge">GitHub</span>
+                    <span class="skill-badge">API Integration</span>
+                    <span class="skill-badge">Looker Studio</span>
+                    <span class="skill-badge">LLMs (ChatGPT)</span>
+                    <span class="skill-badge">draw.io</span>
+                    <span class="skill-badge" style="width: 100%; text-align: center;">Adobe AI/PS/AE</span>
+                </div>
+            </div>
+            
+            <!-- ĐIỂM MẠNH -->
+            <div class="left-section">
+                <div class="left-title">Điểm Mạnh</div>
+                <div class="trait-item">Phân tích dữ liệu & tư duy thuật toán</div>
+                <div class="trait-item">Viết báo cáo & tổng hợp tài liệu khoa học</div>
+                <div class="trait-item">Chăm chỉ, tỉ mỉ & rất kĩ tính hành nghề</div>
+                <div class="trait-item">Tinh thần học hỏi, khai phá kiến thức cao</div>
+            </div>
+            
+            <!-- ĐIỂM YẾU -->
+            <div class="left-section">
+                <div class="left-title">Điểm Yếu</div>
+                <div class="trait-item">Kiến thức nâng cao AI đang không ngừng tích lũy</div>
+                <div class="trait-item">Đôi lúc khá overthinking khi tìm giải pháp tối ưu</div>
+            </div>
+            
+        </div>
+        
+        <!-- CỘT PHẢI (MAIN CONTENT) -->
+        <div class="cv-right-col">
+            
+            <!-- HỌ TÊN & ĐỊNH HƯỚNG -->
+            <div class="header-section">
+                <div class="candidate-name">Trần Thị Ngọc Ngân</div>
+                <div class="candidate-title">Business Analyst / Data Analyst Intern</div>
+                <div class="motto-text">“Mỗi người đều là con ếch, chỉ khác nhau cái miệng giếng mà thôi.”</div>
+            </div>
+            
+            <!-- TÓM TẮT CÁ NHÂN -->
+            <div class="right-section">
+                <div class="right-title">Tóm Tắt Cá Nhân</div>
+                <div class="summary-text">
+                    Sinh viên năm 2 ngành Thương mại điện tử 
+                    – Chương trình Cử nhân Tài năng tại UEL với niềm đam mê sâu sắc về Data, AI và hệ thống công nghệ. Luôn chủ động nghiên cứu và ứng dụng kiến thức số hóa vào thực tiễn kinh doanh. Sở hữu tư duy thuật toán nhạy bén, năng lực phân tích phản biện sắc sảo cùng kinh nghiệm xử lý mô hình hóa quy trình nghiệp vụ, tối ưu hóa cơ sở dữ liệu quan hệ và nghiên cứu khoa học thực nghiệm. Mong muốn ứng tuyển thực tập BA/DA để tối ưu hóa quy trình vận hành.
+                </div>
+            </div>
+            
+            <!-- HỌC VẤN -->
+            <div class="right-section">
+                <div class="right-title">Học Vấn</div>
+                <table class="info-table">
+                    <tr>
+                        <td style="font-weight: bold; color: #0f172a; font-size: 11pt;">Đại học Kinh tế - Luật (UEL) – ĐHQG TP.HCM</td>
+                        <td style="text-align: right; color: #64748b; font-size: 9.5pt;">2024 - Hiện tại</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="color: #334155; font-size: 10pt; padding-top: 4px;">
+                            Chuyên ngành: Thương mại điện tử – <strong>Hệ Cử nhân Tài năng</strong><br>
+                            MSSV: K244111417 | <strong>GPA hiện tại: 8.50 / 10</strong>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- CHỨNG CHỈ -->
+            <div class="right-section">
+                <div class="right-title">Chứng Chỉ</div>
+                <table class="info-table">
+                    <tr>
+                        <td style="width: 85%;">• Chứng chỉ Kỹ năng Phản biện (Critical Thinking) - Thinking School</td>
+                        <td style="text-align: right; color: #64748b; font-size: 9.5pt;">2025</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- KINH NGHIỆM DỰ ÁN & NCKH -->
+            <div class="right-section">
+                <div class="right-title">Kinh Nghiệm Dự Án & Nghiên Cứu Khoa Học</div>
+                
+                <!-- MỤC 1: NGHIÊN CỨU KHOA HỌC -->
+                <div class="project-card">
+                    <div class="project-header-row">
+                        <div class="project-header">Dự án Nghiên cứu Khoa học (NCKH)</div>
+                        <div class="project-status">Đang triển khai</div>
+                    </div>
+                    <div class="project-role">Đề tài: Ứng dụng Generative AI trong Phân tích Kinh doanh và Chiến lược Kinh tế Tuần hoàn</div>
+                    <ul class="project-bullets">
+                        <li>Nghiên cứu các nhân tố ảnh hưởng đến trải nghiệm người dùng, ứng dụng cấu trúc mô hình tích hợp TAM và lý thuyết hành vi e-commerce nâng cao để xử lý bài toán tiếp nhận công nghệ mới.</li>
+                        <li>Sử dụng năng lực tổng hợp tài liệu khoa học chuyên sâu, quản trị và xử lý cấu trúc dữ liệu mô hình để lập báo cáo đề xuất giải pháp nền tảng.</li>
+                    </ul>
+                    <a href="https://drive.google.com/file/d/1pZrLyfF7ry1k4hFGNZHoK6ZXwcpke114/view?usp=drive_link" target="_blank" class="btn-link-project">🔗 Xem tài liệu NCKH</a>
+                </div>
+                
+                <!-- MỤC 2: PHÂN TÍCH THIẾT KẾ HỆ THỐNG -->
+                <div class="project-card">
+                    <div class="project-header-row">
+                        <div class="project-header">Dự án Phân tích & Thiết kế Hệ thống Cảnh báo Thiên tai và Cứu trợ</div>
+                        <div class="project-status">Môn học HTTT</div>
+                    </div>
+                    <div class="project-role">Vai trò: Business Analyst (BA)</div>
+                    <span class="project-score-line">➔ Điểm số môn học: 9.0</span>
+                    <ul class="project-bullets">
+                        <li><strong>Mô hình hóa quy trình (BPMN):</strong> Khảo sát nghiệp vụ thực tế và sử dụng draw.io thiết kế sơ đồ quy trình chuẩn BPMN, xử lý triệt để luồng thông tin cứu trợ khẩn cấp một cách đồng bộ.</li>
+                        <li><strong>Kiến trúc dữ liệu (DFD):</strong> Xây dựng hệ thống sơ đồ luồng dữ liệu cấp 0 & cấp 1 chi tiết trên VS Code, định vị rõ tác nhân và kho dữ liệu nhằm tối ưu hóa vận hành hệ thống.</li>
+                    </ul>
+                    <a href="https://drive.google.com/file/d/1goI4vfzY3iaD1E8X51CdnFJuklLEeesN/view?usp=drive_link" target="_blank" class="btn-link-project">🔗 Xem Đồ án Thiết kế</a>
+                </div>
+                
+                <!-- MỤC 3: CƠ SỞ DỮ LIỆU -->
+                <div class="project-card">
+                    <div class="project-header-row">
+                        <div class="project-header">Thiết kế Cơ sở dữ liệu Hệ thống Quản lý Vận tải Hành khách</div>
+                        <div class="project-status">Môn Cơ sở dữ liệu</div>
+                    </div>
+                    <div class="project-role">Vai trò: Data Architect & Database Designer</div>
+                    <ul class="project-bullets">
+                        <li>Phân tích nghiệp vụ logic hãng xe và kiến thiết sơ đồ quan hệ thực thể (ERD) hoàn chỉnh gồm 15 bảng cơ sở dữ liệu chuẩn hóa[cite: 1].</li>
+                        <li>Thực thi câu lệnh SQL (DDL/DML) tạo lập cấu trúc bảng hệ thống trên SQL Server; xây dựng 8 vấn tin thống kê chuyên sâu phục vụ báo cáo kinh doanh thực tế.</li>
+                    </ul>
+                    <a href="https://drive.google.com/file/d/1YEi1UvHR-qTyUJeqSX0PwExr4lm5fRfN/view?usp=drive_link" target="_blank" class="btn-link-project">🔗 Xem tài liệu Cơ sở dữ liệu</a>
+                </div>
+                
+                <!-- MỤC 4: MARKETING SỐ -->
+                <div class="project-card">
+                    <div class="project-header-row">
+                        <div class="project-header">Phân tích Chỉ số Marketing số & Phễu Chuyển đổi (Hà Linh Official)</div>
+                        <div class="project-status">Môn Phân tích Marketing số</div>
+                    </div>
+                    <div class="project-role">Vai trò: Data Analyst</div>
+                    <span class="project-score-line">➔ Điểm số môn học: 9.3</span>
+                    <ul class="project-bullets">
+                        <li><strong>Khai phá dữ liệu (ETL Pipeline):</strong> Thu thập dữ liệu tự động từ YouTube Data API v3 và Apify Scraper đồng bộ lên GitHub; xử lý dữ liệu định lượng của hơn 1,2 tỷ lượt xem bằng thư viện Python (Pandas).</li>
+                        <li><strong>NLP & Tự động hóa:</strong> Áp dụng Sentiment Analysis đánh giá sắc thái cảm xúc bình luận của người tiêu dùng; chạy mô hình hồi quy đa biến phân tích tương quan và thiết lập workflow automation báo cáo định kỳ trên n8n.</li>
+                    </ul>
+                    <a href="https://drive.google.com/file/d/1iwe3qPA-xAhKvOrHPQTqa-x2xCRmYLwC/view?usp=drive_link" target="_blank" class="btn-link-project">🔗 Xem Đồ án Marketing số</a>
+                </div>
+
+                <!-- MỤC 5: ĐỒ HỌA ĐA PHƯƠNG TIỆN -->
+                <div class="project-card">
+                    <div class="project-header-row">
+                        <div class="project-header">Nghiên cứu Chiến lược Phân khúc STP & Thiết kế Đa phương tiện Phấn Nụ Hoàng Cung</div>
+                        <div class="project-status">Môn Đồ họa</div>
+                    </div>
+                    <div class="project-role">Vai trò: E-Commerce Strategy Analyst | Môn học: Thiết kế Đa phương tiện</div>
+                    <ul class="project-bullets">
+                        <li>Phân tích phân khúc thị trường và chân dung khách hàng e-commerce theo mô hình STP[cite: 2]. Trực tiếp thiết kế cẩm nang cẩm nang thương hiệu (Brand Guidelines) và POSM trên Adobe Illustrator.</li>
+                        <li>Xây dựng kịch bản phân cảnh, thực hiện hậu kỳ và sản xuất video Motion Graphics truyền thông sản phẩm chuyên nghiệp bằng Adobe After Effects.</li>
+                    </ul>
+                    <a href="https://drive.google.com/file/d/1OOnJnL1Fk-dj5qir5K9kZmpVwq_KuoGn/view?usp=drive_link" target="_blank" class="btn-link-project">🔗 Xem Đồ án Đồ họa</a>
+                </div>
+            </div>
+
+            <!-- HOẠT ĐỘNG NGOẠI KHÓA -->
+            <div class="right-section">
+                <div class="right-title">Hoạt Động Ngoại Khóa & Tình Nguyện</div>
+                <table class="info-table">
+                    <tr>
+                        <td style="font-weight: bold; width: 75%; color: #0f172a;">TNV – Hỗ trợ công tác đón tiếp Phụ huynh & Tân sinh viên nhập học</td>
+                        <td style="text-align: right; color: #64748b; font-size: 9.5pt;">Năm học 2025 - 2026</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="color: #334155; font-size: 9.5pt; padding-top: 2px; text-align: justify; padding-bottom: 8px;">
+                            Trực tiếp hướng dẫn sơ đồ khuôn viên, tư vấn quy trình, kiểm tra giấy tờ hành chính và hỗ trợ hoàn thiện thủ tục nhập học trực tiếp cho phụ huynh và tân sinh viên khóa mới tại trường Đại học Kinh tế - Luật (UEL).
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold; width: 75%; color: #0f172a;">Tình nguyện viên – Chiến dịch Tiếp sức mùa thi</td>
+                        <td style="text-align: right; color: #64748b; font-size: 9.5pt;">Giai đoạn 2024 - 2025</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="color: #334155; font-size: 9.5pt; padding-top: 2px; text-align: justify;">
+                            Phối hợp phân luồng giao thông điều tiết ùn tắc, hướng dẫn phòng thi và hỗ trợ vật phẩm thiết yếu cho thí sinh kỳ thi Tốt nghiệp THPT quốc gia; rèn luyện kỹ năng giải quyết tình huống khẩn cấp và làm việc nhóm hiệu quả.
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+        </div>
+        
+    </div>
+
+</body>
+</html>
